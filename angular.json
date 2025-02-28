@@ -29,7 +29,9 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/bootstrap/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/bootstrap/styles.css",
+              "src/bootstrap/astroview.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

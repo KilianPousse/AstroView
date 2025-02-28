@@ -1,0 +1,27 @@
+:root {
+    --av-bg-color: #19222C;
+    --av-box-color: #222E3C;
+    --av-card-color: var(--av-box-color);
+    --av-font-color: #F5F5F5;
+}
+
+.av-box, .av-header, .av-card  {
+    background-color: var(--av-box-color);
+
+}
+
+.av-card {
+    border-radius: 2;
+    color: var(--av-font-color);
+    padding: 1em;
+}
+
+.av-card-body {
+    margin: 0.5em;
+}
+
+.av-card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
