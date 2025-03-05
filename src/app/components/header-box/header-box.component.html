@@ -4,37 +4,33 @@
        https://www.linkedin.com/in/evelym-santos/
 ==========================================================
 -->
-<nav id="navbar" class="">
-    <div class="nav-wrapper">
-      <!-- Navbar Logo -->
-      <div class="logo">
-        <!-- Logo Placeholder for Inlustration -->
-        
-        <a href="#home"><img class="logo" src="title.svg" alt="AstroView Logo"></a>
-      </div>
-  
-      <!-- Navbar Links -->
-      <ul id="menu">
-        <li *ngFor="let navItem of navList">
-          <a [href]="navItem.url">{{ navItem.title }}</a>
-        </li>
-      </ul>
+<nav id="navbar">
+  <div class="nav-wrapper">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="#home"><img class="logo" src="title.svg" alt="AstroView Logo"></a>
     </div>
-  </nav>
-  
-  
-  <!-- Menu Icon -->
-  <div class="menuIcon">
-    <span class="icon icon-bars"></span>
-    <span class="icon icon-bars overlay"></span>
+
+    <!-- Navbar Links (Desktop) -->
+    <ul id="menu" [class.hidden]="menuOpen">
+      <li *ngFor="let navItem of navList">
+        <a [href]="navItem.url">{{ navItem.title }}</a>
+      </li>
+    </ul>
   </div>
-  
-  
-  <div class="overlay-menu">
-    <ul id="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-  </div>
+</nav>
+
+<!-- Menu Icon (Mobile) -->
+<div class="menuIcon" (click)="toggleMenu()">
+  <span class="icon icon-bars"></span>
+  <span class="icon icon-bars overlay"></span>
+</div>
+
+<!-- Overlay Menu (Mobile) -->
+<div class="overlay-menu" [class.active]="menuOpen">
+  <ul>
+    <li *ngFor="let navItem of navList">
+      <a [href]="navItem.url" (click)="toggleMenu()">{{ navItem.title }}</a>
+    </li>
+  </ul>
+</div>
