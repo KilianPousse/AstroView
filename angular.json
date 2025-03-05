@@ -31,7 +31,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/bootstrap/styles.css",
-              "src/bootstrap/astroview.css"
+              "src/bootstrap/astroview.css",
+              "src/bootstrap/av_colors.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

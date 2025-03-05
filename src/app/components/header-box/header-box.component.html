@@ -1,15 +1,40 @@
-<header>
-    <nav class=".av-header sb-topnav navbar navbar-expand navbar-dark">
-        <img src="logo.png" alt="AstroView Logo" style="width: 80px;">
-        <!-- Navbar Brand-->
-        <a class="navbar-title ps-3" href="index.html">AstroView</a>
-
-        <a class="navbar-brand ps-0 ms-auto" href="index.html">A Propos</a>
-        <a class="navbar-brand ps-0" href="index.html">Contact</a>
-        <a class="navbar-brand ps-0" href="index.html">Contact</a>
-        <a class="navbar-brand ps-0" href="index.html">Contact</a>
-        <!-- Sidebar Toggle-->
-    </nav>
-
-</header>
+<!--
+==========================================================
+                      by Évelym S.
+       https://www.linkedin.com/in/evelym-santos/
+==========================================================
+-->
+<nav id="navbar" class="">
+    <div class="nav-wrapper">
+      <!-- Navbar Logo -->
+      <div class="logo">
+        <!-- Logo Placeholder for Inlustration -->
+        
+        <a href="#home"><img class="logo" src="title.svg" alt="AstroView Logo"></a>
+      </div>
   
+      <!-- Navbar Links -->
+      <ul id="menu">
+        <li *ngFor="let navItem of navList">
+          <a [href]="navItem.url">{{ navItem.title }}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  
+  <!-- Menu Icon -->
+  <div class="menuIcon">
+    <span class="icon icon-bars"></span>
+    <span class="icon icon-bars overlay"></span>
+  </div>
+  
+  
+  <div class="overlay-menu">
+    <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+  </div>
