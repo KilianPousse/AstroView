@@ -16,6 +16,10 @@
     font-size: inherit;
     text-decoration: none;
   }
+
+#menu {
+  border: 0px solid #000000;
+}
   
   
   /*======================================================
@@ -47,9 +51,9 @@
   .logo {
     float: left;
     margin-left: 25px;
-    margin-top: 0.25rem;
+    margin-top: 0.33rem;
     font-size: 1.5em;
-    height: 23rem;
+    height: 2.3rem;
     letter-spacing: 1px;
     text-transform: uppercase;
   } @media(max-width: 900px) {

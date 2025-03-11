@@ -1,20 +1,14 @@
-<!--
-==========================================================
-                      by Évelym S.
-       https://www.linkedin.com/in/evelym-santos/
-==========================================================
--->
 <nav id="navbar">
   <div class="nav-wrapper">
     <!-- Logo -->
     <div class="logo">
-      <a href="#home"><img class="logo" src="title.svg" alt="AstroView Logo"></a>
+      <a href="#home"><img class="logo" src="title.png" alt="AstroView Logo"></a>
     </div>
 
     <!-- Navbar Links (Desktop) -->
-    <ul id="menu" [class.hidden]="menuOpen">
+    <ul id="menu" [class.hidden]="menuOpen" #menuElement>
       <li *ngFor="let navItem of navList">
-        <a [href]="navItem.url">{{ navItem.title }}</a>
+        <a>{{ navItem.title }}</a>
       </li>
     </ul>
   </div>
@@ -30,7 +24,7 @@
 <div class="overlay-menu" [class.active]="menuOpen">
   <ul>
     <li *ngFor="let navItem of navList">
-      <a [href]="navItem.url" (click)="toggleMenu()">{{ navItem.title }}</a>
+      <a (click)="toggleMenu()">{{ navItem.title }}</a>
     </li>
   </ul>
 </div>

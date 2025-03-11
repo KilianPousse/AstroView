@@ -6,70 +6,9 @@
     --av-red-color: #C00000;
 }
 
-.av-box, .av-header, .av-card  {
+.av-box {
     background-color: var(--av-box-color);
-
-}
-
-.av-card {
-    border-radius: 2;
+    border-radius: 1rem;
     color: var(--av-font-color);
-    padding: 1em;
-}
-
-.av-card-body {
-    margin: 0.5em;
-}
-
-.av-card-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.av-header {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    height: 60px;
-    padding: 0 20px; 
-}
-
-.navbar-title {
-    font-size: 1.8rem;
-    color: var(--av-font-color);
-    text-decoration: none; 
-    left: -1.0rem;
-}
-
-.av-nav-container {
-    width: 60%; 
-    display: flex;
-    justify-content: flex-end;
-}
-
-.av-nav-list {
-    list-style: none; 
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 2.0rem; 
-}
-
-.av-nav-elem {
-    cursor: pointer;
-    font-size: 1.2rem; 
-    text-decoration: none; 
-    position: relative;
-    color: var(--av-font-color); 
-}
-
-.av-nav-elem:not(:last-child)::after {
-    content: "|"; 
-    position: absolute;
-    right: -1.0rem; 
-    color: var(--av-font-color); 
-}
-
-.av-nav-elem:hover {
-    color: var(--av-red-color);
+    padding: 2.25rem;
 }
