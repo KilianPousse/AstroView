@@ -1,13 +1,28 @@
-<div class="av-box" *ngIf="apod !== null">
+<!--
+@if(apod !== null) {
+  <div class="av-box"  >
     <h2>{{ apod.title }}</h2>
     <p>{{ apod.explanation }}</p>
   
-    <div *ngIf="apod.media_type === 'image'">
-      <img class="av-apod-img" [src]="apod.url" [alt]="apod.title" (load)="onImageLoad()" (error)="onImageError()">
-    </div>
+    @if(apod.media_type === 'image') {
+      <div>
+        <img class="av-apod-img" [src]="apod.url" [alt]="apod.title">
+      </div>
+    }
   
-    <div *ngIf="apod.media_type === 'video'">
-      <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
-    </div>
+    @if(apod.media_type === 'video') {
+      <div>
+        <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
+      </div>
+    }
   </div>
-  
+}
+-->
+
+<h1>HELLO</h1>
+<h1>HELLO</h1>
+<h1>HELLO</h1>
+<h1>HELLO</h1>
+<h1>HELLO</h1>
+<h1>HELLO</h1>
+<h1>HELLO</h1>
