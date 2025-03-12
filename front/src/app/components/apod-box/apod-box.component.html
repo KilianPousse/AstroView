@@ -1,0 +1,13 @@
+<div class="av-box" *ngIf="apod !== null">
+    <h2>{{ apod.title }}</h2>
+    <p>{{ apod.explanation }}</p>
+  
+    <div *ngIf="apod.media_type === 'image'">
+      <img class="av-apod-img" [src]="apod.url" [alt]="apod.title" (load)="onImageLoad()" (error)="onImageError()">
+    </div>
+  
+    <div *ngIf="apod.media_type === 'video'">
+      <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+  
