@@ -1,0 +1,15 @@
+<div id="meteo" class="av-box">
+    <div class="av-box-body">
+        @if (meteo !== null) {
+            <div class="meteo-info">
+                <h1>Météo</h1>
+                <p>
+                    <b>Météo: </b>{{ meteoDescription }} <br>
+                    <b>Température: </b>{{ temperature }}°C <br>
+                    <b>Vent: </b>{{ vent }} km/h
+                </p>
+            </div>
+            <img [src]="imgSrc" [alt]="meteoDescription">
+        }
+    </div>
+</div>

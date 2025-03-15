@@ -15,7 +15,7 @@
     <!-- Navbar Links (Desktop) -->
     <ul id="menu" [class.hidden]="menuOpen" #menuElement>
       <li *ngFor="let navItem of navList">
-        <a>{{ navItem.title }}</a>
+        <a [href]="navItem.href">{{ navItem.title }}</a>
       </li>
     </ul>
   </div>

@@ -1,0 +1,27 @@
+@import url("../../../styles.css");
+
+#meteo .av-box-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.meteo-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#meteo img {
+    width: 8rem;
+    height: auto;
+    margin-left: auto; 
+    margin-right: 0.5rem; 
+    margin-top: auto;
+    align-self: center; 
+}
+
+#meteo p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}

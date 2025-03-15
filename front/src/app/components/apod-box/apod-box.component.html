@@ -1,19 +1,29 @@
+<div id="apod" class="av-box">
+  <h1>Image du Jour</h1>
 
-@if(apod !== null) {
-  <div class="av-box"  >
-    <h2>{{ apod.title }}</h2>
-    <p>{{ apod.explanation }}</p>
-  
-    @if(apod.media_type === 'image') {
-      <div>
-        <img class="av-apod-img" [src]="apod.url" [alt]="apod.title">
+  <div class="av-box-body">
+    @if(apod !== null) {
+      <div class="av-box"  >
+        <h4><b>Titre:</b> {{ apod.title }}</h4>
+        <p>{{ apod.explanation }}</p>
+      
+        @if(apod.media_type === 'image') {
+          <div>
+            <img class="av-apod-img" [src]="apod.url" [alt]="apod.title">
+          </div>
+        }
+      
+        @if(apod.media_type === 'video') {
+          <div>
+            <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
+          </div>
+        }
+
+        <p><b>Credit:</b> {{ apod.copyright }}</p>
       </div>
     }
-  
-    @if(apod.media_type === 'video') {
-      <div>
-        <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
-      </div>
+    @else {
+      <p>cacacacacacacaac</p>
     }
   </div>
-}
+</div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
-import { ApodBoxComponent } from './components/apod-box/apod-box.component';
+import { BodyComponent } from './components/body/body.component';
 import { CommonModule } from '@angular/common'; 
 
 @Component({
@@ -9,11 +9,11 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     HeaderComponent,
-    ApodBoxComponent
+    BodyComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'dashfront';
+  title = 'AstroView';
 }

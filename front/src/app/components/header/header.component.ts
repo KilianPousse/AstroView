@@ -15,12 +15,14 @@ export class HeaderComponent {
   }
 
   categories = [
-    { title: 'Image du Jour', url: '#dayimg' },
-    { title: 'Visualisation', url: '#target' },
-    { title: 'Calendier', url: '#calendar' }
+    { title: 'Image du Jour', href: '#apod' },
+    { title: 'Visualisation', href: '#target' },
+    { title: 'Calendier', href: '#calendar' },
+    { title: 'Calendier', href: '#calendar' },
+    { title: 'Calendier', href: '#calendar' }
   ];
 
-  navList = [...this.categories];  // Initialise navList avec toutes les catégories
+  navList = [...this.categories.slice(0, 3)]
 
   menuOpen = false;
 
@@ -32,6 +34,10 @@ export class HeaderComponent {
       // Fermer le menu si la largeur de la fenêtre dépasse 900px
       if (window.innerWidth > 900) {
         this.menuOpen = false;
+      }
+
+      if (window.innerWidth <= 900) {
+        this.menuOpen = true;
       }
     }
   }
