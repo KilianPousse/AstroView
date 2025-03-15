@@ -2,14 +2,12 @@ const express = require('express');
 const cors = require('cors');
 
 // Import du fichier externe
-const { fetchAPOD } = require('./service/apod'); 
+const { fetchAPOD } = require('./api/apod'); 
 
 const app = express();
 const port = 3080;
 
-app.use(cors({
-    origin: 'http://localhost:4200' 
-}));
+app.use(cors());
 
 // Endpoint API pour récupérer l'APOD
 app.get("/apod", async (req, res) => {

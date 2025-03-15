@@ -14,8 +14,13 @@ export class ApiApodService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAPOD() {
-    console.log(this.httpClient.get(`${this.RESET_API}`));
-    return this.httpClient.get(`${this.RESET_API}`);
+  getAPOD(): Observable<any> {
+    return this.httpClient.get(`${this.RESET_API}`).pipe(
+      catchError(error => {
+        console.error('API error:', error);  // Log the error to console
+        return throwError(() => new Error('Something went wrong while fetching the APOD.'));
+      })
+    );
   }
+  
 }

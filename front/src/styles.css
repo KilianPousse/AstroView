@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --av-color-white: #f5f5f5;
+    --av-color-black: #19222c;
+    --av-color-gray: #222e3c;
+    --av-color-red: #c00000;
+    --av-color-blue: #00a6fb;
+    --av-color-purple: #6a00f4;
+
+    --av-color-bg: var(--av-color-black);
+    --av-color-box: var(--av-color-gray);
+    --av-color-text: var(--av-color-white);
+
+    --av-font-family: 'Roboto-Condensed';
+    --av-font-size: 1rem;
+    --av-font-color: var(--av-color-text);
+}
+
+/* Police du titre d'AstroView */
+@font-face {
+    font-family: 'Space-Crusaders';
+    src: url('assets/space-crusaders.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Police du texte */
+@font-face {
+    font-family: 'Roboto-Condensed';
+    src: url('assets/Roboto-Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: var(--av-font-family);
+    font-size: var(--av-font-size);
+    color: var(--av-font-color); 
+    background-color: var(--av-color-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
