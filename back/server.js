@@ -4,6 +4,7 @@ const cors = require('cors');
 // Import du fichier externe
 const { getMeteo } = require('./api/meteo');
 const { fetchAPOD } = require('./api/apod');
+const { getISS } = require('./api/iss');
 
 const app = express();
 const port = 3080;
@@ -39,6 +40,19 @@ app.get("/apod", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+// Endpoint API pour récupérer l'ISS
+app.get("/iss", async (req, res) => {
+    try {
+        const issData = await getISS();
+        res.json(issData);
+    }
+    catch(error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
