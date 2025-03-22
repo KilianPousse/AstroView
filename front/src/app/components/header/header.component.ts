@@ -16,8 +16,8 @@ export class HeaderComponent {
 
   categories = [
     { title: 'Image du Jour', href: '#apod' },
-    { title: 'Visualisation', href: '#target' },
-    { title: 'Calendier', href: '#calendar' },
+    { title: 'Météo', href: '#meteo' },
+    { title: 'Astronautes', href: '#astros' },
     { title: 'Calendier', href: '#calendar' },
     { title: 'Calendier', href: '#calendar' }
   ];

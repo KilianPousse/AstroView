@@ -45,11 +45,6 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-#av-body {
-    padding: 10px;
-    padding-top: 100px;
-}
-
 .av-box {
     /*box-shadow: 5px 5px 10px var(--av-color-shadow);*/
     border-radius: 10px;
@@ -70,6 +65,6 @@ body {
     display: inline-block;
     font-style: bold;
     padding-right: 25px;
-    border-bottom: 2px solid var(--av-color-white);
+    border-bottom: 2px solid var(--av-color-red);
     padding-bottom: 5px;
 }

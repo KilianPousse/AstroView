@@ -40,8 +40,8 @@ export class MeteoBoxComponent implements OnInit {
   
 
   // Coordonnées de l'utilisateur (lat et lon à obtenir via géolocalisation)
-  lat = 48.8566;
-  lon = 2.3522;
+  lat = 52.52;
+  lon = 13.41;
 
   meteoDescription: string = "???"; 
   weatherCode: number = 24;
@@ -68,8 +68,10 @@ export class MeteoBoxComponent implements OnInit {
         this.vent = this.meteo.current_weather['windspeed'];
       }
 
-      // Mettre à jour le chemin de l'image
-      this.imgSrc = `./meteo/${this.weatherCode}.png`; 
+      if(this.meteoDescription !== "Condition Inconnue") {
+        // Mettre à jour le chemin de l'image
+        this.imgSrc = `./meteo/${this.weatherCode}.png`;
+      }
     });
   }
 }

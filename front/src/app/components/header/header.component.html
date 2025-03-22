@@ -30,7 +30,7 @@
 <!-- Overlay Menu (Mobile) -->
 <div class="overlay-menu" [class.active]="menuOpen">
   <ul>
-    <li *ngFor="let navItem of navList">
+    <li *ngFor="let navItem of categories">
       <a (click)="toggleMenu()">{{ navItem.title }}</a>
     </li>
   </ul>

@@ -5,6 +5,7 @@ const cors = require('cors');
 const { getMeteo } = require('./api/meteo');
 const { fetchAPOD } = require('./api/apod');
 const { getISS } = require('./api/iss');
+const { getAstros } = require('./api/astros')
 
 const app = express();
 const port = 3080;
@@ -52,6 +53,17 @@ app.get("/iss", async (req, res) => {
     }
 });
 
+
+// Endpoint API pour récupérer Astros
+app.get("/astros", async (req, res) => {
+    try {
+        const astrosData = await getAstros();
+        res.json(astrosData);
+    }
+    catch(error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 
 app.listen(port, () => {

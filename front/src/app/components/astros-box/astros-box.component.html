@@ -1,0 +1,23 @@
+<div id="astros" class="av-box">
+    <h1>Astronautes</h1>
+    <p>Nombre d'astronautes dans l'espace: {{ astros?.number }}</p>
+
+    <table *ngIf="astros?.people; else loading" border="1">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Vaisseau</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of astros.people">
+                <td>{{ person.name }}</td>
+                <td>{{ person.craft }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ng-template #loading>
+        <p>Loading astronauts...</p>
+    </ng-template>
+</div>
