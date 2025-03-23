@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MeteoService } from '../../services/meteo/meteo.service';
+import { PositionService } from '../../services/position/position.service';
+import { UiaService } from '../../services/uia/uia.service';
 
 @Component({
   selector: 'app-meteo-box',
@@ -40,18 +42,25 @@ export class MeteoBoxComponent implements OnInit {
   
 
   // Coordonnées de l'utilisateur (lat et lon à obtenir via géolocalisation)
-  lat = 52.52;
-  lon = 13.41;
+  lat = 48.01;
+  lon = 5.18;
 
   meteoDescription: string = "???"; 
-  weatherCode: number = 24;
+  weatherCode: number = 1;
   imgSrc: string = `./meteo/${this.weatherCode}.png`; 
   temperature: number = 0.0
   vent: number = 0.0 
 
-  constructor(private api: MeteoService) { }
+  constructor(private api: MeteoService, private position: PositionService, public uia: UiaService) { }
 
   ngOnInit(): void {
+
+    // Recuperation de la localisation
+    this.position.getPosition().then(pos => {
+      this.lat = pos.latitude;
+      this.lon = pos.longitude;
+    });
+
     // Appel à l'API pour récupérer la météo
     this.api.getMeteo(this.lat, this.lon).subscribe(res => {
       console.log('Récupération de la météo', res);

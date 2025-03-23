@@ -1,8 +1,16 @@
-<div id="av-body">
-    <div class="av-grid">
-        <app-meteo-box class="box" style="grid-area: box-1;"></app-meteo-box>
-        <app-apod-box class="box" style="grid-area: box-2;"></app-apod-box>
-        <!--<app-iss-box class="box" style="grid-area: box-4;"></app-iss-box>-->
-        <app-astros-box class="box" style="grid-area: box-3;"></app-astros-box>
+<div id="av-body">    
+    <div id="av-body-column">
+        <div id="av-body-left">
+            <app-meteo-box id="meteo"></app-meteo-box>
+            <app-astros-box id="astros"></app-astros-box>
+        </div>
+
+        <div id="av-body-right">
+            <app-apod-box id="apod"></app-apod-box>
+        </div>
+    </div>
+        
+    <div id="av-body-bottom">
+        <app-sat-box id="sat"></app-sat-box>
     </div>
 </div>

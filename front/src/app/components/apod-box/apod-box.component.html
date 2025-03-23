@@ -1,25 +1,36 @@
-<div id="apod" class="av-box">
+<div class="av-box">
   <h1>Image du Jour</h1>
 
   <div class="av-box-body">
     @if(apod !== null) {
       <div class="av-box"  >
-        <h4><b>Titre:</b> {{ apod.title }}</h4>
-        <p>{{ apod.explanation }}</p>
-      
-        @if(apod.media_type === 'image') {
-          <div>
-            <img class="av-apod-img" [src]="apod.url" [alt]="apod.title">
-          </div>
-        }
-      
-        @if(apod.media_type === 'video') {
-          <div>
-            <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
-          </div>
-        }
+        <div class="av-apod-body">
 
-        <p><b>Credit:</b> {{ apod.copyright }}</p>
+          <!-- Case de gauche -->
+          <div class="apod-left">
+            <h4><b>Titre:</b> {{ apod.title }}</h4>
+          
+            @if(apod.media_type === 'image') {
+              <div>
+                <img class="av-apod-img" [src]="apod.url" [alt]="apod.title">
+              </div>
+            }
+          
+            @if(apod.media_type === 'video') {
+              <div>
+                <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
+              </div>
+            }
+
+          </div>
+
+          <!-- Case de droite -->
+          <div class="apod-right">
+            <p>{{ apod.explanation }}</p>
+            <p><b>Credit:</b> {{ apod.copyright }}</p>
+          </div>
+
+        </div>
       </div>
     }
     @else {

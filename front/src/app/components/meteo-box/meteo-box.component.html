@@ -1,4 +1,4 @@
-<div id="meteo" class="av-box">
+<div class="av-box">
     <div class="av-box-body">
             <div class="meteo-info">
                 <h1>Météo</h1>
@@ -8,7 +8,7 @@
                     <b>Vent: </b>{{ vent }} km/h
                 </p>
             </div>
-            <img [src]="imgSrc" [alt]="meteoDescription">
-      
+            @if(uia.get()) { <img src="./uia.gif" [alt]="meteoDescription"> }
+            @else { <img [src]="imgSrc" [alt]="meteoDescription"> }
     </div>
 </div>

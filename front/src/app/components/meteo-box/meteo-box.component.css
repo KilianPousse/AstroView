@@ -1,6 +1,6 @@
 @import url("../../../styles.css");
 
-#meteo .av-box-body {
+.av-box-body {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,7 +12,7 @@
     justify-content: center;
 }
 
-#meteo img {
+img {
     width: 8rem;
     height: auto;
     margin-left: auto; 
@@ -21,7 +21,7 @@
     align-self: center; 
 }
 
-#meteo p {
+p {
     font-size: 1rem;
     margin-top: 0.5rem;
 }

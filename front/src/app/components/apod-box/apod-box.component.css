@@ -2,3 +2,33 @@
     width: 100%;
     height: auto;
 }
+
+.av-apod-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.apod-left {
+    text-align: left;
+}
+
+.apod-right {
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+    .av-apod-body {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .apod-left, .apod-right {
+        text-align: center; /* Optionnel : centre le texte */
+        margin: 0; /* Optionnel : réinitialise les marges */
+    }
+
+    .apod-right {
+        margin-top: 20px; /* Ajuste l'espace entre les blocs */
+    }
+}

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, importProvidersFrom } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { UiaService } from '../../services/uia/uia.service';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +11,17 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  constructor(public uia: UiaService) { }
+
   ngAfterViewInit(): void {
     
   }
 
   categories = [
     { title: 'Image du Jour', href: '#apod' },
-    { title: 'Météo', href: '#meteo' },
+    { title: 'Satellites', href: '#sat' },
     { title: 'Astronautes', href: '#astros' },
-    { title: 'Calendier', href: '#calendar' },
-    { title: 'Calendier', href: '#calendar' }
+    { title: 'Météo', href: '#meteo' }
   ];
 
   navList = [...this.categories.slice(0, 3)]
@@ -39,5 +41,11 @@ export class HeaderComponent {
       if (window.innerWidth <= 900) {
         this.menuOpen = true;
       }
-    }
   }
+
+  toggleUIA(): void {
+    this.uia.switchUIA(); 
+  }
+
+
+}

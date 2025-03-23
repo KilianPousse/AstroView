@@ -4,8 +4,8 @@ const cors = require('cors');
 // Import du fichier externe
 const { getMeteo } = require('./api/meteo');
 const { fetchAPOD } = require('./api/apod');
-const { getISS } = require('./api/iss');
 const { getAstros } = require('./api/astros')
+const { getCelesTrak } = require('./api/celestrak');
 
 const app = express();
 const port = 3080;
@@ -42,23 +42,33 @@ app.get("/apod", async (req, res) => {
     }
 });
 
-// Endpoint API pour récupérer l'ISS
-app.get("/iss", async (req, res) => {
+// Endpoint API pour récupérer Astros
+app.get("/astros", async (req, res) => {
     try {
-        const issData = await getISS();
-        res.json(issData);
+        const astrosData = await getAstros();
+        res.json(astrosData);
     }
     catch(error) {
         res.status(500).json({ error: error.message });
     }
 });
 
+app.get("/celestrak", async (req, res) => {
+    const { id } = req.query; 
 
-// Endpoint API pour récupérer Astros
-app.get("/astros", async (req, res) => {
+    // Vérifier si lat et lon sont présents
+    if(!id) {
+        return res.status(400).json({ error: 'L\'id du satellite est requis.' });
+    }
+
     try {
-        const astrosData = await getAstros();
-        res.json(astrosData);
+        const tleData = await getCelesTrak(id);
+        
+        if(tleData.length < 3) {
+            return res.status(404).json({ error: 'Satellite inconnu.' });
+        }
+
+        res.json({name: tleData[0], tle1: tleData[1], tle2: tleData[2]});
     }
     catch(error) {
         res.status(500).json({ error: error.message });

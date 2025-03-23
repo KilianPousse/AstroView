@@ -9,7 +9,10 @@
   <div class="nav-wrapper">
     <!-- Logo -->
     <div class="logo">
-      <a href="#home"><img class="logo" src="title.png" alt="AstroView Logo"></a>
+      <a href="#home">
+        @if(!uia.get()) { <img class="logo" src="title.png" alt="AstroView Logo"> }
+        @else { <img class="logo" src="title-uia.png" alt="AstroView Logo"> }
+      </a>
     </div>
 
     <!-- Navbar Links (Desktop) -->
@@ -31,7 +34,10 @@
 <div class="overlay-menu" [class.active]="menuOpen">
   <ul>
     <li *ngFor="let navItem of categories">
-      <a (click)="toggleMenu()">{{ navItem.title }}</a>
+      <a [href]="navItem.href" (click)="toggleMenu()">{{ navItem.title }}</a>
+    </li>
+    <li>
+      <a (click)="toggleUIA()">uia</a>
     </li>
   </ul>
 </div>
