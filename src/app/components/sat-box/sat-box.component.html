@@ -1,4 +1,30 @@
-<p>sat-box works!</p>
-<div id="map"></div>
+<div class="av-box">
+    <h1>Satellites</h1>
 
-<p>ISS: {{ iss?.name }} {{ iss?.lat }} {{ iss?.lon }}</p>
+    <div class="sat-grid">
+        <div class="sat-left">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Icon</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sat of sats">
+                        <td>{{ sat.name }}</td>
+                        <td><img class="sat-icon" [src]="sat.icon" [alt]="sat.name"></td>
+                        <td>{{ sat.lat }}</td>
+                        <td>{{ sat.lon }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="sat-right">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
