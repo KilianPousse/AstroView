@@ -45,9 +45,12 @@
     display: flex;
     gap: 15px;
     width: 100%;
-    margin: 0 auto; /* Centre horizontalement */
-    justify-content: center; /* Centre les enfants horizontalement */
-    align-items: center; /* Centre les enfants verticalement */
+    margin: 0 auto;
+    /* Centre horizontalement */
+    justify-content: center;
+    /* Centre les enfants horizontalement */
+    align-items: center;
+    /* Centre les enfants verticalement */
 }
 
 .form-box .form-group {

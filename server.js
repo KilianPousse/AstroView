@@ -6,6 +6,7 @@ const { getMeteo } = require('./back/api/meteo');
 const { fetchAPOD } = require('./back/api/apod');
 const { getAstros } = require('./back/api/astros')
 const { getCelesTrak } = require('./back/api/celestrak');
+const { getCelestialNavigation } = require('./back/api/usno');
 
 const app = express();
 const port = 3080;
@@ -84,6 +85,7 @@ app.get("/usno", async (req, res) => {
     }
 
     try {
+        console.log("tentative de récupération des données USNO");
         const celestialData = await getCelestialNavigation(date, time, lat, lon);
 
         console.log("Donné du USNO : ", res.json(celestialData));

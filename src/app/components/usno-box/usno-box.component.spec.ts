@@ -10,7 +10,7 @@ describe('UsnoBoxComponent', () => {
     await TestBed.configureTestingModule({
       imports: [UsnoBoxComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(UsnoBoxComponent);
     component = fixture.componentInstance;
