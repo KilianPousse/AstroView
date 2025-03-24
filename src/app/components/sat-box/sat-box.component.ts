@@ -23,8 +23,13 @@ export class SatBoxComponent implements OnInit {
     { id: 25544, icon: './iss.png' },       
     { id: 44714, icon: './starlink.png' },  
     { id: 20580, icon: './hubble.png' }   ,  
+<<<<<<< Updated upstream
     { id: 10321, icon: './voyager.png' } ,  
     { id: 29401, icon: './newhoriz.png' } ,  
+=======
+    { id: 39574, icon: './voyager.png' } ,  
+    { id: 29108, icon: './newhoriz.png' } ,  
+>>>>>>> Stashed changes
     { id: 52159, icon: './juno.png' }   
   ];
 

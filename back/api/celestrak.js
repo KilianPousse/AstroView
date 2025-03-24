@@ -5,7 +5,7 @@ async function getCelesTrak(id) {
 
     try {
         const resp = await axios.get(url);
-        console.log("value aaaa:", resp.data.trim().split('\n'))
+        console.log("value :", resp.data.trim().split('\n'))
         return resp.data.trim().split('\n');
     }   
     catch(err) {
