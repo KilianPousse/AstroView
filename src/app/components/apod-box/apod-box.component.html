@@ -3,39 +3,44 @@
 
   <div class="av-box-body">
     @if(apod !== null) {
-      <div class="av-box"  >
-        <div class="av-apod-body">
+    <div class="av-box">
+      <div class="av-apod-body">
 
-          <!-- Case de gauche -->
-          <div class="apod-left">
-            <h4><b>Titre:</b> {{ apod.title }}</h4>
-          
-            @if(apod.media_type === 'image') {
-              <div>
-                <img class="av-apod-img" [src]="apod.url" [alt]="apod.title">
-              </div>
-            }
-          
-            @if(apod.media_type === 'video') {
-              <div>
-                <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
-              </div>
-            }
+        <!-- Case de gauche -->
+        <div class="apod-left">
+          <h4><b>Titre:</b> {{ apod.title }}</h4>
 
+          @if(apod.media_type === 'image') {
+          <div>
+            <img class="av-apod-img" [src]="apod.url" [alt]="apod.title">
           </div>
+          }
 
-          <!-- Case de droite -->
-          <div class="apod-right">
-            <p>{{ apod.explanation }}</p>
-            <p><b>Credit:</b> {{ apod.copyright }}</p>
+          @else if(apod.media_type === 'video') {
+          <div>
+            <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
           </div>
+          }
+          @else {
+          <div>
+            <p>Aucun média à fournir</p>
+          </div>
+          }
 
         </div>
+
+        <!-- Case de droite -->
+        <div class="apod-right">
+          <p>{{ apod.explanation }}</p>
+          <p><b>Credit:</b> {{ apod.copyright }}</p>
+        </div>
+
       </div>
+    </div>
     }
     @else {
-      <p style="color: red; font-size: 1rem;">⚠️ Erreur d'API ⚠️</p>
-      <img src="./uh.jpg" alt="Erreur API">
+    <p style="color: red; font-size: 1rem;">⚠️ Erreur d'API ⚠️</p>
+    <img src="./uh.jpg" alt="Erreur API">
     }
   </div>
 </div>

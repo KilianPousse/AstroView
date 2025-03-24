@@ -13,7 +13,7 @@ export class HeaderComponent {
   constructor() { }
 
   ngAfterViewInit(): void {
-    
+
   }
 
   categories = [
@@ -21,6 +21,7 @@ export class HeaderComponent {
     { title: 'Satellites', href: '#sat' },
     { title: 'Astronautes', href: '#astros' },
     { title: 'Météo', href: '#meteo' }
+
   ];
 
   navList = [...this.categories.slice(0, 3)]
@@ -32,14 +33,14 @@ export class HeaderComponent {
   }
 
   onResize(event: Event) {
-      // Fermer le menu si la largeur de la fenêtre dépasse 900px
-      if (window.innerWidth > 900) {
-        this.menuOpen = false;
-      }
+    // Fermer le menu si la largeur de la fenêtre dépasse 900px
+    if (window.innerWidth > 900) {
+      this.menuOpen = false;
+    }
 
-      if (window.innerWidth <= 900) {
-        this.menuOpen = true;
-      }
+    if (window.innerWidth <= 900) {
+      this.menuOpen = true;
+    }
   }
 
 }

@@ -15,9 +15,10 @@ export class ApodBoxComponent implements OnInit {
   constructor(private api: ApiApodService) { }
 
   ngOnInit(): void {
-    this.api.getAPOD().subscribe( res=> {
-        console.log('Récupération de l\'APOD');
-        this.apod = res;
+    this.api.getAPOD().subscribe(res => {
+      console.log('Récupération de l\'APOD');
+      this.apod = res;
+      console.log(this.apod);
     });
   }
 
