@@ -25,7 +25,7 @@ export class SatBoxComponent implements OnInit {
     { id: 20580, icon: './hubble.png' }   ,  
     { id: 10321, icon: './voyager.png' } ,  
     { id: 29401, icon: './newhoriz.png' } ,  
-    { id: 37773, icon: './juno.png' }   
+    { id: 52159, icon: './juno.png' }   
   ];
 
   sats: any[] = [];

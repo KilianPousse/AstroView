@@ -38,8 +38,8 @@ export class SatService {
         const sat = {
           id: id,
           name: data.name.trim(),
-          lat: satellite.degreesLat(posGd.latitude),
-          lon: satellite.degreesLong(posGd.longitude)
+          lat: parseFloat(satellite.degreesLat(posGd.latitude).toFixed(4)),
+          lon: parseFloat(satellite.degreesLong(posGd.longitude).toFixed(4))
         };
 
         return sat;

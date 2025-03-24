@@ -8,7 +8,7 @@
 
           <!-- Case de gauche -->
           <div class="apod-left">
-            <h4><b>Titre:</b> {{ apod.title }}</h4>
+            <h2><b>Titre:</b> {{ apod.title }}</h2>
           
             @if(apod.media_type === 'image') {
               <div>
@@ -19,6 +19,12 @@
             @if(apod.media_type === 'video') {
               <div>
                 <iframe [src]="apod.url" frameborder="0" allowfullscreen></iframe>
+              </div>
+            }
+
+            @if(apod.media_type === 'other') {
+              <div>
+                <img class="av-apod-img" src="./moon.png" alt="moon">
               </div>
             }
 
