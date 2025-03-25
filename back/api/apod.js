@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const apiKey = "nTiC3UmNgbVylmcaxKegsY9cmVjAhSC3qZc8bIOI";
+const apiKey = /* Cle API */;
 const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
 async function fetchAPOD() {
